@@ -15,6 +15,7 @@ public class TestConneciton {
     public void check() {
 
         try {
+            
             InitialContext ic = new InitialContext();
             DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library");
             Connection conn = ds.getConnection();
