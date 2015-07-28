@@ -1,0 +1,15 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@page import="kz.kokmardan.model.genre.Genre" %>
+
+<div class="sidebar1">
+    <h4>Темы:</h4>
+    <ul class="nav">
+        <jsp:useBean id="genreList" class="kz.kokmardan.model.genre.GenreList" scope="application"/>
+        <%
+            for (Genre genre : genreList.getGenreList()) {
+        %>
+        <li><a href="books.jsp?genre_id=<%=genre.getId()%>&name=<%=genre.getName()%>"><%=genre.getName()%></a></li>
+
+        <%}%>
+    </ul>
+</div>
