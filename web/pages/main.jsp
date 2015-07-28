@@ -20,20 +20,19 @@
                 <img src="../images/library.png" alt="Логотип" name="logo" />
                 
                 </div>
-                
                 <div class="descr">
-                    <h3>Мой онлайн библиотека</h3>
+                    <h3>Онлайн библиотека</h3>
                 </div>
-
-                <form class="search_form" name="search_form" method="POST">
-                    <img src="../images/search.jpg"/> 
-                    <input type="text" name="search_String" value="" size="100" />
-                    <input type="submit" value="Поиск" name="search_button" />
-                    <select name="search_option">
-                        <option>Название</option>
-                        <option>Автор</option>
-                    </select>
-                </form>
+                <div class="search_form">
+                    <form name="search_form" method="POST">
+                        <input type="text" name="search_String" value="" size="110" />
+                        <input class="search_button" type="submit" value="Поиск" name="search_button" />
+                        <select name="search_option">
+                            <option>Название</option>
+                            <option>Автор</option>
+                        </select>
+                    </form>
+                </div>
             </div>
 
 
