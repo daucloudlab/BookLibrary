@@ -1,5 +1,5 @@
-<%@page import="kz.kokmardan.model.author.Author" %>
-<%@page import="kz.kokmardan.model.author.AuthorList" %>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -16,7 +16,14 @@
 
 
             <div class="header">
-                <img alt="Место для логотипа" name="logo" width="100%" height="90"/>
+                <div class="logo">
+                <img src="../images/library.png" alt="Логотип" name="logo" />
+                
+                </div>
+                
+                <div class="descr">
+                    <h3>Мой онлайн библиотека</h3>
+                </div>
 
                 <form class="search_form" name="search_form" method="POST">
                     <img src="../images/search.jpg"/> 
@@ -35,13 +42,16 @@
             <div class="sidebar1">
                 <h4>Список авторов:</h4>
                 <ul class="nav">
-                    <% AuthorList authorList = new AuthorList();
-                        for (Author author : authorList.getAuthorList()) {
-                    %>
-                    <li><a href="#"><%=author.getName()%></a></li>
+                    
+                    <jsp:useBean id="authorList" class="kz.kokmardan.model.author.AuthorList" 
+                                     scope="application"/>
+                    <c:forEach var="author" items="${authorList.getAuthorList()}">
 
-                    <%}%>
+                        <li><a href="#">${author.name}</a></li>
+
+                    </c:forEach>
                 </ul>
+                    
                 <p>&nbsp;</p>
             </div>
 
